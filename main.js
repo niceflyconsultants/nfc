@@ -567,9 +567,9 @@ initializeScrollMarquee() {
     ? 1
     : -1;
 
-    leftPosition += direction * 0.5;
+    leftPosition += direction * 0.1;
 
-    rightPosition -= direction * 0.5;
+    rightPosition -= direction * 0.1;
 
     trackLeft.style.transform =
     `translateX(calc(${leftPosition}%))`;
