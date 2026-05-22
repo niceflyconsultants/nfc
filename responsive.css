@@ -1,0 +1,784 @@
+/* =========================================
+   TABLET
+========================================= */
+
+@media (max-width:960px){
+
+  .container{
+    width:94%;
+  }
+
+  .hero-wrapper,
+  .contact-grid,
+  .service-panel,
+  .about-grid{
+    gap:30px;
+  }
+
+  .hero h1{
+    font-size:clamp(2.5rem,5vw,4rem);
+  }
+
+  .hero p,
+  .page-hero p,
+  .contact-info p,
+  .service-content p,
+  .about-left p,
+  .cta-card p{
+    font-size:15px;
+  }
+
+  .footer-top{
+    grid-template-columns:
+    1fr 1fr;
+  }
+
+}
+
+/* =========================================
+   MOBILE RESPONSIVE
+   768px → Small Screens
+========================================= */
+
+@media (max-width:768px){
+
+  .container{
+    width:94%;
+  }
+
+  /* =========================
+     NAVBAR
+  ========================= */
+
+  .nav-wrapper{
+    height:70px;
+  }
+
+  .logo img{
+    height:48px;
+  }
+
+/* MOBILE MENU */
+
+.nav-links{
+
+  position:fixed;
+
+  top:0;
+  right:-100%;
+
+  width:300px;
+  height:100vh;
+
+  padding:120px 35px;
+
+  display:flex;
+  flex-direction:column;
+
+  align-items:flex-start;
+  justify-content:flex-start;
+
+  gap:28px;
+
+  background:
+  rgba(7,11,20,0.98);
+
+  backdrop-filter:blur(20px);
+
+  border-left:
+  1px solid rgba(255,255,255,0.08);
+
+  transition:0.45s ease;
+
+  z-index:1001;
+
+  box-shadow:
+  -10px 0 40px rgba(0,0,0,0.4);
+
+}
+
+.nav-links.active{
+  right:0;
+}
+
+  .nav-btn{
+    display:none;
+  }
+
+.hamburger{
+
+  width:48px;
+  height:48px;
+
+  display:flex;
+
+  flex-direction:column;
+
+  align-items:center;
+  justify-content:center;
+
+  gap:6px;
+
+  border-radius:14px;
+
+  background:
+  rgba(255,255,255,0.05);
+
+  border:
+  1px solid rgba(255,255,255,0.08);
+
+  cursor:pointer;
+
+  position:relative;
+
+  z-index:1002;
+
+}
+
+.hamburger span{
+
+  width:22px;
+  height:2px;
+
+  background:#fff;
+
+  border-radius:10px;
+
+  transition:0.35s ease;
+
+}
+
+/* ANIMATION */
+
+.hamburger.active span:nth-child(1){
+  transform:
+  translateY(8px)
+  rotate(45deg);
+}
+
+.hamburger.active span:nth-child(2){
+  opacity:0;
+}
+
+.hamburger.active span:nth-child(3){
+  transform:
+  translateY(-8px)
+  rotate(-45deg);
+}
+body.menu-open{
+  overflow:hidden;
+}
+  /* =========================
+     HERO
+  ========================= */
+
+  .hero{
+    min-height:auto;
+    padding:
+    120px
+    0
+    80px;
+  }
+
+  .hero-wrapper{
+    grid-template-columns:1fr;
+    gap:50px;
+    text-align:center;
+  }
+
+  .hero-content{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+  }
+
+  .hero-badge{
+    padding:10px 18px;
+    margin-bottom:24px;
+  }
+
+  .hero h1{
+    font-size:clamp(2.4rem,10vw,4rem);
+    line-height:1.15;
+    margin-bottom:20px;
+  }
+
+  .hero p{
+    font-size:15px;
+    line-height:1.9;
+    margin-bottom:34px;
+  }
+
+  .hero-buttons{
+    justify-content:center;
+    gap:14px;
+  }
+
+  .btn-primary,
+  .btn-secondary{
+    width:100%;
+    justify-content:center;
+    text-align:center;
+
+    padding:15px 22px;
+
+    font-size:14px;
+  }
+
+  .hero-stats{
+    justify-content:center;
+    gap:28px;
+    margin-top:40px;
+  }
+
+  .stat-box h3{
+    font-size:2rem;
+  }
+
+  .hero-image img{
+    max-width:420px;
+  }
+
+  /* =========================
+     SECTION HEADER
+  ========================= */
+
+  .section-header{
+    margin-bottom:50px;
+  }
+
+  .section-header h2{
+    font-size:clamp(2rem,8vw,3rem);
+    line-height:1.2;
+  }
+
+  .section-header p{
+    font-size:15px;
+    line-height:1.8;
+  }
+
+  .section-badge{
+    padding:10px 18px;
+    font-size:13px;
+  }
+
+  /* =========================
+     SECTIONS
+  ========================= */
+
+  .partners-section,
+  .destinations-section,
+  .contact-section,
+  .services-page,
+  .about-section{
+    padding:80px 0;
+  }
+
+  /* =========================
+     PARTNERS
+  ========================= */
+
+  .partner-card{
+    width:220px;
+    padding:24px 18px;
+    border-radius:24px;
+  }
+
+  .partner-card img{
+    height:90px;
+  }
+
+  /* =========================
+     DESTINATIONS
+  ========================= */
+
+  .destination-grid{
+    grid-template-columns:1fr;
+    gap:22px;
+  }
+
+  .destination-card{
+    border-radius:28px;
+  }
+
+  .card-top{
+    height:200px;
+  }
+
+  .country-icon img{
+    width:90px;
+    height:90px;
+  }
+
+  .country-badge{
+    top:16px;
+    right:16px;
+
+    padding:8px 14px;
+
+    font-size:12px;
+  }
+
+  .card-content{
+    padding:26px 22px;
+  }
+
+  .card-content h3{
+    font-size:1.5rem;
+    margin-bottom:14px;
+  }
+
+  .card-content p{
+    font-size:14px;
+    margin-bottom:22px;
+  }
+
+  /* =========================
+     CONTACT
+  ========================= */
+
+  .contact-grid{
+    grid-template-columns:1fr;
+    gap:50px;
+  }
+
+  .contact-info{
+    text-align:center;
+  }
+
+  .contact-info h2{
+    font-size:clamp(2rem,8vw,3rem);
+  }
+
+  .contact-info p{
+    font-size:15px;
+    margin-bottom:34px;
+  }
+
+  .contact-items{
+    gap:18px;
+  }
+
+  .contact-item{
+    padding:20px;
+    gap:14px;
+    border-radius:22px;
+  }
+
+  .contact-icon{
+    min-width:50px;
+    height:50px;
+    border-radius:16px;
+  }
+
+  .contact-form{
+    padding:24px;
+    border-radius:28px;
+  }
+
+  .form-group{
+    margin-bottom:18px;
+  }
+
+  .form-group label{
+    font-size:14px;
+    margin-bottom:10px;
+  }
+
+  .form-group input,
+  .form-group textarea{
+    padding:15px 18px;
+    font-size:14px;
+    border-radius:16px;
+  }
+
+  .contact-btn{
+    padding:16px;
+    font-size:14px;
+    border-radius:16px;
+  }
+
+  /* =========================
+     FOOTER
+  ========================= */
+
+  .footer{
+    padding:80px 0 30px;
+  }
+
+  .footer-top{
+    grid-template-columns:1fr;
+    gap:40px;
+    margin-bottom:50px;
+  }
+
+  .footer-brand{
+    text-align:center;
+  }
+
+  .footer-brand p{
+    max-width:100%;
+    margin:20px 0 26px;
+    font-size:14px;
+  }
+
+  .footer-logo img{
+    height:60px;
+  }
+
+  .footer-socials{
+    justify-content:center;
+  }
+
+  .footer-links{
+    text-align:center;
+  }
+
+  .footer-links h3{
+    margin-bottom:18px;
+    font-size:1.1rem;
+  }
+
+  .footer-links a,
+  .footer-links p{
+    margin-bottom:12px;
+    font-size:14px;
+  }
+
+  .footer-bottom{
+    flex-direction:column;
+    text-align:center;
+    gap:18px;
+  }
+
+  .developer-credit{
+    justify-content:center;
+  }
+
+  /* =========================
+     PAGE HERO
+  ========================= */
+
+  .page-hero{
+    min-height:auto;
+
+    padding:
+    120px
+    0
+    80px;
+
+    text-align:center;
+  }
+
+  .page-hero h1{
+    font-size:clamp(2.4rem,10vw,4rem);
+  }
+
+  .page-hero p{
+    font-size:15px;
+  }
+
+  /* =========================
+     SERVICE PANEL
+  ========================= */
+
+  .service-panel{
+    grid-template-columns:1fr;
+    gap:40px;
+    margin-bottom:80px;
+  }
+
+  .service-panel.reverse .service-image,
+  .service-panel.reverse .service-content{
+    order:unset;
+  }
+
+  .service-image img{
+    height:320px;
+    border-radius:28px;
+  }
+
+  .service-content{
+    padding:0;
+    text-align:center;
+  }
+
+  .country-label{
+    padding:10px 18px;
+    margin-bottom:20px;
+    font-size:13px;
+  }
+
+  .service-content h3{
+    font-size:clamp(2rem,8vw,3rem);
+    margin-bottom:18px;
+  }
+
+  .service-content p{
+    font-size:15px;
+    margin-bottom:18px;
+  }
+
+  .read-more-btn{
+    padding:14px 24px;
+    font-size:14px;
+  }
+
+  /* =========================
+     ABOUT
+  ========================= */
+
+  .about-grid{
+    grid-template-columns:1fr;
+    gap:50px;
+  }
+
+  .about-left{
+    text-align:center;
+  }
+
+  .about-left h2{
+    font-size:clamp(2rem,8vw,3rem);
+  }
+
+  .about-left p{
+    font-size:15px;
+  }
+
+  .about-stats{
+    justify-content:center;
+    gap:24px;
+    margin-top:36px;
+  }
+
+  .about-stat h3{
+    font-size:2rem;
+  }
+
+  .about-right{
+    gap:22px;
+  }
+
+  .about-card{
+    padding:26px 22px;
+    border-radius:26px;
+  }
+
+  .about-card-icon{
+    width:62px;
+    height:62px;
+    border-radius:20px;
+    margin-bottom:18px;
+  }
+
+  .about-card h3{
+    font-size:1.3rem;
+    margin-bottom:14px;
+  }
+
+  .about-card p{
+    font-size:14px;
+  }
+
+  /* =========================
+     WHY
+  ========================= */
+
+  .why-grid{
+    grid-template-columns:1fr;
+    gap:20px;
+  }
+
+  .why-card{
+    padding:26px 22px;
+    border-radius:24px;
+  }
+
+  .why-icon{
+    width:62px;
+    height:62px;
+    border-radius:18px;
+    margin-bottom:18px;
+  }
+
+  .why-card h3{
+    font-size:1.2rem;
+    margin-bottom:14px;
+  }
+
+  .why-card p{
+    font-size:14px;
+  }
+
+  /* =========================
+     TEAM
+  ========================= */
+
+  .team-grid{
+    grid-template-columns:1fr;
+    gap:24px;
+  }
+
+  .team-image{
+    height:280px;
+  }
+
+  .team-content{
+    padding:24px 20px;
+  }
+
+  .team-content h3{
+    font-size:1.4rem;
+  }
+
+  .team-content p{
+    font-size:14px;
+  }
+
+  /* =========================
+     CTA
+  ========================= */
+
+  .cta-section{
+    padding:20px 0 80px;
+  }
+
+  .cta-card{
+    padding:50px 24px;
+    border-radius:30px;
+    margin-bottom:60px;
+  }
+
+  .cta-card h2{
+    font-size:clamp(2rem,8vw,3.5rem);
+  }
+
+  .cta-card p{
+    font-size:15px;
+    margin-bottom:34px;
+  }
+
+  .cta-buttons{
+    gap:14px;
+    margin-bottom:40px;
+  }
+
+  .cta-trust{
+    gap:30px;
+  }
+
+  .trust-item h3{
+    font-size:2rem;
+  }
+
+  .trust-item span{
+    font-size:14px;
+  }
+
+}
+
+/* =========================================
+   SMALL MOBILE
+========================================= */
+
+@media (max-width:480px){
+
+  .hero h1,
+  .page-hero h1{
+    font-size:2.2rem;
+  }
+
+  .section-header h2,
+  .contact-info h2,
+  .service-content h3,
+  .about-left h2,
+  .cta-card h2{
+    font-size:1.9rem;
+  }
+
+  .hero-buttons{
+    flex-direction:column;
+  }
+
+  .btn-primary,
+  .btn-secondary{
+    width:100%;
+  }
+
+  .hero-stats{
+    flex-direction:column;
+    align-items:center;
+    text-align:center;
+    gap:20px;
+  }
+
+  .about-stats{
+    flex-direction:column;
+    align-items:center;
+    text-align:center;
+  }
+
+  .cta-trust{
+    flex-direction:column;
+    align-items:center;
+    text-align:center;
+  }
+
+  .footer-socials{
+    flex-wrap:wrap;
+  }
+/* =========================
+   LOCATION SECTION
+========================= */
+
+.location-grid{
+
+  grid-template-columns:1fr;
+
+  gap:30px;
+
+}
+
+.map-wrapper{
+
+  min-height:350px;
+
+  border-radius:24px;
+
+}
+
+.location-card{
+
+  padding:22px;
+
+  border-radius:24px;
+
+}
+/* =========================
+   FAQ SECTION
+========================= */
+
+.faq-section{
+  padding:80px 0;
+}
+
+.faq-question{
+
+  padding:22px 20px;
+
+  font-size:15px;
+
+  line-height:1.7;
+
+}
+
+.faq-answer p{
+
+  padding:
+  0 20px 24px;
+
+  font-size:14px;
+
+}
+
+}

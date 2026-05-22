@@ -3,19 +3,103 @@
 // MAIN JAVASCRIPT
 // ===============================
 
-document.addEventListener("DOMContentLoaded", () => {
+class NiceFlyApp {
+
+  constructor() {
+
+    this.header =
+    document.getElementById("header");
+
+    this.footer =
+    document.getElementById("footer");
+
+    this.init();
+
+  }
 
   // ===============================
-  // MOBILE MENU
+  // INIT
   // ===============================
 
-  const hamburger =
+  async init() {
+
+    await this.loadComponents();
+
+    this.initializeNavbar();
+
+    this.initializeSmoothScroll();
+
+    this.initializeNavbarScroll();
+
+    this.initializeParallax();
+    this.initializeScrollMarquee();
+
+    this.initializeReadMore();
+
+    this.initializeCounters();
+
+    this.initializeFAQ();
+
+    this.initializeActiveNav();
+
+    this.initializeRevealAnimations();
+
+  }
+
+  // ===============================
+  // LOAD COMPONENTS
+  // ===============================
+
+  async loadComponents() {
+
+    try {
+
+      // LOAD HEADER
+      if (this.header) {
+
+        const response =
+        await fetch("header.html");
+
+        this.header.innerHTML =
+        await response.text();
+
+      }
+
+      // LOAD FOOTER
+      if (this.footer) {
+
+        const response =
+        await fetch("footer.html");
+
+        this.footer.innerHTML =
+        await response.text();
+
+      }
+
+    } catch (error) {
+
+      console.error(
+        "Component loading failed:",
+        error
+      );
+
+    }
+
+  }
+
+  // ===============================
+  // NAVBAR
+  // ===============================
+
+  initializeNavbar() {
+
+    const hamburger =
     document.getElementById("hamburger");
 
-  const navLinks =
+    const navLinks =
     document.getElementById("navLinks");
 
-  if (hamburger && navLinks) {
+    if (!hamburger || !navLinks) return;
 
     hamburger.addEventListener("click", () => {
 
@@ -23,7 +107,64 @@ document.addEventListener("DOMContentLoaded", () => {
 
       hamburger.classList.toggle("active");
 
-      document.body.classList.toggle("menu-open");
+      document.body.classList.toggle(
+        "menu-open"
+      );
+
+    });
+
+    // CLOSE MENU ON LINK CLICK
+
+    navLinks
+    .querySelectorAll("a")
+    .forEach(link => {
+
+      link.addEventListener("click", () => {
+
+        navLinks.classList.remove(
+          "active"
+        );
+
+        hamburger.classList.remove(
+          "active"
+        );
+
+        document.body.classList.remove(
+          "menu-open"
+        );
+
+      });
+
+    });
+
+  }
+
+  // ===============================
+  // ACTIVE NAVIGATION
+  // ===============================
+
+  initializeActiveNav() {
+
+    const currentPage =
+    window.location.pathname
+    .split("/")
+    .pop();
+
+    const navLinks =
+    document.querySelectorAll(
+      ".nav-links a"
+    );
+
+    navLinks.forEach(link => {
+
+      const href =
+      link.getAttribute("href");
+
+      if (href === currentPage) {
+
+        link.classList.add("active");
+
+      }
 
     });
 
@@ -33,180 +174,428 @@ document.addEventListener("DOMContentLoaded", () => {
   // SMOOTH SCROLL
   // ===============================
 
-  document
+  initializeSmoothScroll() {
+
+    document
     .querySelectorAll('a[href^="#"]')
     .forEach(anchor => {
 
-      anchor.addEventListener("click", function (e) {
+      anchor.addEventListener(
+        "click",
+        e => {
 
-        const targetId =
-          this.getAttribute("href");
+          const targetId =
+          anchor.getAttribute("href");
 
-        if (targetId === "#") return;
+          if (targetId === "#")
+          return;
 
-        const target =
-          document.querySelector(targetId);
+          const target =
+          document.querySelector(
+            targetId
+          );
 
-        if (!target) return;
+          if (!target) return;
 
-        e.preventDefault();
+          e.preventDefault();
 
-        const offset = 80;
+          const offset = 80;
 
-        const topPosition =
+          const topPosition =
           target.offsetTop - offset;
 
-        window.scrollTo({
-          top: topPosition,
-          behavior: "smooth"
-        });
+          window.scrollTo({
 
-        // CLOSE MOBILE MENU
-        navLinks.classList.remove("active");
-        hamburger.classList.remove("active");
+            top: topPosition,
 
-      });
+            behavior:"smooth"
+
+          });
+
+        }
+
+      );
 
     });
+
+  }
 
   // ===============================
   // NAVBAR SCROLL EFFECT
   // ===============================
 
-  const navbar =
+  initializeNavbarScroll() {
+
+    const navbar =
     document.querySelector(".navbar");
 
-  window.addEventListener("scroll", () => {
+    if (!navbar) return;
 
-    if (window.scrollY > 50) {
+    const handleScroll = () => {
 
-      navbar.style.background =
-        "rgba(7,11,20,0.85)";
+      if (window.scrollY > 50) {
 
-      navbar.style.backdropFilter =
-        "blur(20px)";
+        navbar.style.background =
+        "rgba(7,11,20,0.88)";
 
-    } else {
+        navbar.style.backdropFilter =
+        "blur(22px)";
 
-      navbar.style.background =
-        "rgba(7,11,20,0.6)";
-
-    }
-
-  });
-
-  // ===============================
-  // PARALLAX ORBS
-  // ===============================
-
-  const orbs =
-    document.querySelectorAll(".orb");
-
-  window.addEventListener("scroll", () => {
-
-    const scrollY = window.scrollY;
-
-    orbs.forEach((orb, index) => {
-
-      const speed =
-        (index + 1) * 0.03;
-
-      orb.style.transform =
-        `translateY(${scrollY * speed}px)`;
-
-    });
-
-  });
-
-});
-
-// ===============================
-// READ MORE TOGGLE
-// ===============================
-
-const readMoreButtons =
-document.querySelectorAll(".read-more-btn");
-
-readMoreButtons.forEach(button => {
-
-  button.addEventListener("click", () => {
-
-    const moreText =
-      button.previousElementSibling;
-
-    moreText.classList.toggle("active");
-
-    if (
-      moreText.classList.contains("active")
-    ) {
-
-      button.textContent = "Read Less";
-
-    } else {
-
-      button.textContent = "Read More";
-
-    }
-
-  });
-
-});
-
-// ===============================
-// STAT COUNTER ANIMATION
-// ===============================
-
-const counters =
-document.querySelectorAll(".counter");
-
-const counterObserver =
-new IntersectionObserver((entries) => {
-
-  entries.forEach(entry => {
-
-    if (!entry.isIntersecting) return;
-
-    const counter =
-    entry.target;
-
-    const target =
-    +counter.dataset.target;
-
-    let current = 0;
-
-    const increment =
-    target / 120;
-
-    const updateCounter = () => {
-
-      current += increment;
-
-      if (current < target) {
-
-        counter.innerText =
-        Math.ceil(current) + "+";
-
-        requestAnimationFrame(updateCounter);
+        navbar.style.borderBottom =
+        "1px solid rgba(255,255,255,0.08)";
 
       } else {
 
-        counter.innerText =
-        target + "+";
+        navbar.style.background =
+        "rgba(7,11,20,0.65)";
 
       }
 
     };
 
-    updateCounter();
+    window.addEventListener(
+      "scroll",
+      handleScroll
+    );
 
-    counterObserver.unobserve(counter);
+  }
+
+  // ===============================
+  // PARALLAX ORBS
+  // ===============================
+
+  initializeParallax() {
+
+    const orbs =
+    document.querySelectorAll(".orb");
+
+    if (!orbs.length) return;
+
+    let ticking = false;
+
+    window.addEventListener("scroll", () => {
+
+      if (!ticking) {
+
+        window.requestAnimationFrame(() => {
+
+          const scrollY =
+          window.scrollY;
+
+          orbs.forEach((orb, index) => {
+
+            const speed =
+            (index + 1) * 0.03;
+
+            orb.style.transform =
+            `translateY(${scrollY * speed}px)`;
+
+          });
+
+          ticking = false;
+
+        });
+
+        ticking = true;
+
+      }
+
+    });
+
+  }
+
+  // ===============================
+  // READ MORE TOGGLE
+  // ===============================
+
+  initializeReadMore() {
+
+    const buttons =
+    document.querySelectorAll(
+      ".read-more-btn"
+    );
+
+    buttons.forEach(button => {
+
+      button.addEventListener(
+        "click",
+        () => {
+
+          const moreText =
+          button.previousElementSibling;
+
+          moreText.classList.toggle(
+            "active"
+          );
+
+          button.textContent =
+          moreText.classList.contains(
+            "active"
+          )
+          ? "Read Less"
+          : "Read More";
+
+        }
+
+      );
+
+    });
+
+  }
+
+  // ===============================
+  // COUNTER ANIMATION
+  // ===============================
+
+  initializeCounters() {
+
+    const counters =
+    document.querySelectorAll(
+      ".counter"
+    );
+
+    if (!counters.length) return;
+
+    const observer =
+    new IntersectionObserver(
+
+      entries => {
+
+        entries.forEach(entry => {
+
+          if (!entry.isIntersecting)
+          return;
+
+          const counter =
+          entry.target;
+
+          const target =
+          +counter.dataset.target;
+
+          let current = 0;
+
+          const increment =
+          target / 120;
+
+          const updateCounter =
+          () => {
+
+            current += increment;
+
+            if (current < target) {
+
+              counter.innerText =
+              Math.ceil(current) + "+";
+
+              requestAnimationFrame(
+                updateCounter
+              );
+
+            } else {
+
+              counter.innerText =
+              target + "+";
+
+            }
+
+          };
+
+          updateCounter();
+
+          observer.unobserve(counter);
+
+        });
+
+      },
+
+      {
+        threshold:0.5
+      }
+
+    );
+
+    counters.forEach(counter => {
+      observer.observe(counter);
+    });
+
+  }
+
+  // ===============================
+  // FAQ ACCORDION
+  // ===============================
+
+  initializeFAQ() {
+
+    const faqItems =
+    document.querySelectorAll(
+      ".faq-item"
+    );
+
+    faqItems.forEach(item => {
+
+      const question =
+      item.querySelector(
+        ".faq-question"
+      );
+
+      question.addEventListener(
+        "click",
+        () => {
+
+          const isActive =
+          item.classList.contains(
+            "active"
+          );
+
+          faqItems.forEach(faq => {
+
+            faq.classList.remove(
+              "active"
+            );
+
+          });
+
+          if (!isActive) {
+
+            item.classList.add(
+              "active"
+            );
+
+          }
+
+        }
+
+      );
+
+    });
+
+  }
+
+  // ===============================
+  // REVEAL ANIMATION
+  // ===============================
+
+  initializeRevealAnimations() {
+
+    const elements =
+    document.querySelectorAll(
+
+      ".destination-card,\
+      .partner-card,\
+      .service-panel,\
+      .faq-item,\
+      .contact-item,\
+      .team-card"
+
+    );
+
+    if (!elements.length) return;
+
+    const observer =
+    new IntersectionObserver(
+
+      entries => {
+
+        entries.forEach(entry => {
+
+          if (
+            entry.isIntersecting
+          ) {
+
+            entry.target.classList.add(
+              "show-element"
+            );
+
+            observer.unobserve(
+              entry.target
+            );
+
+          }
+
+        });
+
+      },
+
+      {
+        threshold:0.15
+      }
+
+    );
+
+    elements.forEach(element => {
+
+      element.classList.add(
+        "hidden-element"
+      );
+
+      observer.observe(element);
+
+    });
+
+  }
+  
+
+// ===============================
+// SCROLL MARQUEE EFFECT
+// ===============================
+
+initializeScrollMarquee() {
+
+  const trackLeft =
+  document.getElementById("trackLeft");
+
+  const trackRight =
+  document.getElementById("trackRight");
+
+  if (!trackLeft || !trackRight)
+  return;
+
+  let lastScroll =
+  window.scrollY;
+
+  let leftPosition = -50;
+
+  let rightPosition = -50;
+
+  window.addEventListener("scroll", () => {
+
+    const currentScroll =
+    window.scrollY;
+
+    const direction =
+    currentScroll > lastScroll
+    ? 1
+    : -1;
+
+    leftPosition += direction * 0.5;
+
+    rightPosition -= direction * 0.5;
+
+    trackLeft.style.transform =
+    `translateX(calc(${leftPosition}%))`;
+
+    trackRight.style.transform =
+    `translateX(calc(${rightPosition}%))`;
+
+    lastScroll = currentScroll;
 
   });
 
-}, {
-  threshold: 0.5
-});
+}
 
-counters.forEach(counter => {
-  counterObserver.observe(counter);
-});
+}
+
+
+// ===============================
+// INITIALIZE APP
+// ===============================
+
+document.addEventListener(
+  "DOMContentLoaded",
+  () => {
+
+    new NiceFlyApp();
+
+  }
+);
+

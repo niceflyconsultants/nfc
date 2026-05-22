@@ -8,7 +8,8 @@
   <meta name="keywords" content="Nice Fly Consultants, study abroad consultants, education consultancy Lahore, study in UK, study in Canada, student visa assistance Pakistan, international education consultants, overseas education Lahore, best study abroad agency Pakistan">
   <link rel="icon" href="nice fly consultants.png" type="image/png">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="responsive.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-..." crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 <body>
@@ -16,102 +17,81 @@
      NAVBAR
 ========================= -->
 
-<header class="navbar">
-
-  <div class="container nav-wrapper">
-
-    <!-- LOGO -->
-    <a href="index.html" class="logo">
-      <img src="assets/nice fly consultants.png" alt="Nice Fly Consultants">
-    </a>
-
-    <!-- DESKTOP MENU -->
-    <nav class="nav-links" id="navLinks">
-
-      <a href="#home">Home</a>
-      <a href="#about">About</a>
-      <a href="services.html">Services</a>
-      <a href="#contact">Contact</a>
-
-      <a
-        href="https://wa.me/923004117716"
-        target="_blank"
-        class="nav-btn"
-      >
-        <i class="fa-brands fa-whatsapp"></i>
-        WhatsApp
-      </a>
-
-    </nav>
-
-    <!-- MOBILE TOGGLE -->
-    <div class="hamburger" id="hamburger">
-      <span></span>
-      <span></span>
-      <span></span>
-    </div>
-
-  </div>
-
-</header>
-
+<div id="header"></div>
 <!-- =========================
      ABOUT HERO
 ========================= -->
 
-<section class="page-hero about-page-hero" id="about">
+<section class="hero" id="about">
 
+  <!-- Animated Background -->
   <div class="hero-bg">
 
     <div class="orb orb-1"></div>
     <div class="orb orb-2"></div>
+    <div class="orb orb-3"></div>
 
     <div class="grid-overlay"></div>
 
   </div>
 
-  <div class="container page-hero-content">
+  <div class="container
+  hero-wrapper">
 
-    <span class="section-badge">
-      About Nice Fly Consultants
-    </span>
+    <!-- LEFT CONTENT -->
+    <div class=" hero-content">
 
-    <h1>
-      Your Trusted Partner For
-      <span>Global Education</span>
-    </h1>
+      <span class="section-badge">
+        About Nice Fly Consultants
+      </span>
 
-    <p>
-      Empowering students across Pakistan with
-      expert study abroad guidance, university
-      admissions support, and successful visa solutions.
-    </p>
+      <h1>
+        Your Trusted Partner For
+        <span>Global Education</span>
+      </h1>
 
-    <div class="hero-buttons">
+      <p>
+        Empowering students across Pakistan with
+        expert study abroad guidance, university
+        admissions support, and successful visa solutions.
+      </p>
 
-      <a
-        href="tel:+923004117716"
-        class="btn-primary"
+      <div class="hero-buttons">
+
+        <a
+          href="tel:+923004117716"
+          class="btn-primary"
+        >
+          <i class="fa-solid fa-phone"></i>
+          Free Consultation
+        </a>
+
+        <a
+          href="https://wa.me/923004117716"
+          target="_blank"
+          class="btn-secondary"
+        >
+          <i class="fa-brands fa-whatsapp"></i>
+          WhatsApp Us
+        </a>
+
+      </div>
+
+    </div>
+
+    <!-- RIGHT IMAGE -->
+    <div class="hero-image about-hero-img">
+
+      <img
+        src="assets/about-NFC.png"
+        alt="About Nice Fly Consultants"
       >
-        <i class="fa-solid fa-phone"></i>
-        Free Consultation
-      </a>
-
-      <a
-        href="https://wa.me/923004117716"
-        target="_blank"
-        class="btn-secondary"
-      >
-        <i class="fa-brands fa-whatsapp"></i>
-        WhatsApp Us
-      </a>
 
     </div>
 
   </div>
 
 </section>
-
 <!-- =========================
      ABOUT STORY
 ========================= -->
@@ -809,128 +789,7 @@
 <!-- =========================
      FOOTER
 ========================= -->
-
-<footer class="footer">
-
-  <div class="container">
-
-    <!-- TOP -->
-    <div class="footer-top">
-
-      <!-- BRAND -->
-      <div class="footer-brand">
-
-        <div class="footer-logo">
-
-          <img
-            src="assets/Nice Fly Consultants logo.png"
-            alt="Nice Fly Consultants"
-          >
-
-        </div>
-
-        <p>
-          Nice Fly Consultants helps students achieve
-          their dreams of international education through
-          trusted guidance, admissions support, and visa
-          consultancy services.
-        </p>
-
-        <!-- SOCIAL -->
-        <div class="footer-socials">
-
-          <a
-            href="https://wa.me/923004117716"
-            target="_blank"
-          >
-            <i class="fa-brands fa-whatsapp"></i>
-          </a>
-
-          <a
-            href="mailto:niceflyconsultants@gmail.com"
-          >
-            <i class="fa-solid fa-envelope"></i>
-          </a>
-
-          <a href="#">
-            <i class="fa-brands fa-linkedin-in"></i>
-          </a>
-
-        </div>
-
-      </div>
-
-      <!-- LINKS -->
-      <div class="footer-links">
-
-        <h3>Quick Links</h3>
-
-        <a href="#home">Home</a>
-        <a href="#destinations">Destinations</a>
-        <a href="#services">Services</a>
-        <a href="#contact">Contact</a>
-
-      </div>
-
-      <!-- COUNTRIES -->
-      <div class="footer-links">
-
-        <h3>Study Destinations</h3>
-
-        <a href="#">Study in UK</a>
-        <a href="#">Study in USA</a>
-        <a href="#">Study in Canada</a>
-        <a href="#">Study in Australia</a>
-
-      </div>
-
-      <!-- CONTACT -->
-      <div class="footer-links">
-
-        <h3>Contact Info</h3>
-
-        <p>042-35384101</p>
-
-        <p>
-          niceflyconsultants@gmail.com
-        </p>
-
-        <p>
-          40 KM Multan Road
-          Manga Mandi Lahore
-        </p>
-
-      </div>
-
-    </div>
-
-    <!-- BOTTOM -->
-    <div class="footer-bottom">
-
-      <p>
-        © 2025 Nice Fly Consultants.
-        All Rights Reserved.
-      </p>
-
-      <div class="developer-credit">
-
-        <span>
-          Designed By
-        </span>
-
-        <a
-          href="https://webflowbykhalid.com/"
-          target="_blank"
-          rel="noopener noreferrer"
-        >Khalid Karim</a>
-
-      </div>
-
-    </div>
-
-  </div>
-
-</footer>
+<div id="footer"></div>
 
   <!-- footer section-->
   <script src="main.js"></script>

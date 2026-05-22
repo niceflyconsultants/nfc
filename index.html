@@ -31,53 +31,16 @@
     href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
   />
 
-  <!-- CSS -->
-  <link rel="stylesheet" href="style.css"/>
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="responsive.css">
+
 </head>
 
 <body>
 <!-- =========================
      NAVBAR
 ========================= -->
-
-<header class="navbar">
-
-  <div class="container nav-wrapper">
-
-    <!-- LOGO -->
-    <a href="index.html" class="logo">
-      <img src="assets/nice fly consultants.png" alt="Nice Fly Consultants">
-    </a>
-
-    <!-- DESKTOP MENU -->
-    <nav class="nav-links" id="navLinks">
-
-      <a href="#home">Home</a>
-      <a href="about.html">About</a>
-      <a href="services.html">Services</a>
-      <a href="#contact">Contact</a>
-
-      <a
-        href="https://wa.me/923004117716"
-        target="_blank"
-        class="nav-btn"
-      >
-        <i class="fa-brands fa-whatsapp"></i>
-        WhatsApp
-      </a>
-
-    </nav>
-
-    <!-- MOBILE TOGGLE -->
-    <div class="hamburger" id="hamburger">
-      <span></span>
-      <span></span>
-      <span></span>
-    </div>
-
-  </div>
-
-</header>
+<div id="header"></div>
 
 <!-- =========================
      HERO SECTION
@@ -96,66 +59,81 @@
 
   </div>
 
-  <div class="container hero-content">
+  <div class="container hero-wrapper">
 
-    <div class="hero-badge">
-      <span></span>
-      Trusted by 5000+ Students Worldwide
+    <!-- LEFT CONTENT -->
+    <div class=" 
+    hero-content">
+
+      <div class="hero-badge">
+        <span></span>
+        Trusted by 5000+ Students Worldwide
+      </div>
+
+      <h1>
+        Start Your
+        <span>Study Abroad</span>
+        Journey With Confidence
+      </h1>
+
+      <p>
+        Expert guidance for students aiming to study in the
+        UK, USA, Canada, Australia, and Europe.
+      </p>
+
+      <div class="hero-buttons">
+
+        <a href="tel:+923004117716" class="btn-primary">
+          <i class="fa-solid fa-phone"></i>
+          Free Consultation
+        </a>
+
+        <a
+          href="https://wa.me/923004117716"
+          target="_blank"
+          class="btn-secondary"
+        >
+          <i class="fa-brands fa-whatsapp"></i>
+          Chat on WhatsApp
+        </a>
+
+      </div>
+
+      <!-- STATS -->
+      <div class="hero-stats">
+
+        <div class="stat-box">
+          <h3 class="counter" data-target="5000">0</h3>
+          <p>Students</p>
+        </div>
+
+        <div class="stat-box">
+          <h3 class="counter" data-target="10">0</h3>
+          <p>Years Experience</p>
+        </div>
+
+        <div class="stat-box">
+          <h3 class="counter" data-target="35">0</h3>
+          <p>Countries</p>
+        </div>
+
+      </div>
+
     </div>
 
-    <h1>
-      Start Your
-      <span>Study Abroad</span>
-      Journey With Confidence
-    </h1>
+    <!-- RIGHT IMAGE -->
+    <div class="hero-image">
 
-    <p>
-      Expert guidance for students aiming to study in the
-      UK, USA, Canada, Australia, and Europe.
-    </p>
-
-    <div class="hero-buttons">
-
-      <a href="tel:+923004117716" class="btn-primary">
-        <i class="fa-solid fa-phone"></i>
-        Free Consultation
-      </a>
-
-      <a
-        href="https://wa.me/923004117716"
-        target="_blank"
-        class="btn-secondary"
+      <img
+        src="assets/hero-home.png"
+        alt="Study Abroad Students"
       >
-        <i class="fa-brands fa-whatsapp"></i>
-        Chat on WhatsApp
-      </a>
 
     </div>
-
-    <!-- STATS -->
-<div class="hero-stats">
-
-  <div class="stat-box">
-    <h3 class="counter" data-target="5000">0</h3>
-    <p>Students</p>
-  </div>
-
-  <div class="stat-box">
-    <h3 class="counter" data-target="10">0</h3>
-    <p>Years Experience</p>
-  </div>
-
-  <div class="stat-box">
-    <h3 class="counter" data-target="35">0</h3>
-    <p>Countries</p>
-  </div>
-
-</div>
 
   </div>
 
 </section>
-
 <!-- =========================
      PARTNER UNIVERSITIES
 ========================= -->
@@ -191,8 +169,7 @@
   <!-- MARQUEE -->
   <div class="partner-marquee">
 
-    <div class="marquee-track">
-
+<div class="marquee-track" id="trackLeft">
       <!-- CARD -->
       <div class="partner-card">
         <img
@@ -279,9 +256,193 @@
         <h3>University of Nottingham</h3>
       </div>
 
+      <!-- CARD -->
+      <div class="partner-card">
+        <img
+          src="assets/university curtin.webp"
+          alt="Curtin University"
+        >
+        <h3>Curtin University</h3>
+      </div>
+
+      <!-- CARD -->
+      <div class="partner-card">
+        <img
+          src="assets/university deakin.webp"
+          alt="Deakin University"
+        >
+        <h3>Deakin University</h3>
+      </div>
+
+      <!-- CARD -->
+      <div class="partner-card">
+        <img
+          src="assets/university of birmingham.webp"
+          alt="University of Birmingham"
+        >
+        <h3>University of Birmingham</h3>
+      </div>
+
+      <!-- CARD -->
+      <div class="partner-card">
+        <img
+          src="assets/university of london royal holloway.webp"
+          alt="Royal Holloway"
+        >
+        <h3>Royal Holloway</h3>
+      </div>
+
+      <!-- CARD -->
+      <div class="partner-card">
+        <img
+          src="assets/university of nottingham.webp"
+          alt="University of Nottingham"
+        >
+        <h3>University of Nottingham</h3>
+      </div>
+
     </div>
 
   </div>
+
+    <div class="partner-marquee">
+
+<div class="marquee-track marquee-reverse" id="trackRight">
+      <!-- CARD -->
+      <div class="partner-card">
+        <img
+          src="assets/university curtin.webp"
+          alt="Curtin University"
+        >
+        <h3>Curtin University</h3>
+      </div>
+
+      <!-- CARD -->
+      <div class="partner-card">
+        <img
+          src="assets/university deakin.webp"
+          alt="Deakin University"
+        >
+        <h3>Deakin University</h3>
+      </div>
+
+      <!-- CARD -->
+      <div class="partner-card">
+        <img
+          src="assets/university of birmingham.webp"
+          alt="University of Birmingham"
+        >
+        <h3>University of Birmingham</h3>
+      </div>
+
+      <!-- CARD -->
+      <div class="partner-card">
+        <img
+          src="assets/university of london royal holloway.webp"
+          alt="Royal Holloway"
+        >
+        <h3>Royal Holloway</h3>
+      </div>
+
+      <!-- CARD -->
+      <div class="partner-card">
+        <img
+          src="assets/university of nottingham.webp"
+          alt="University of Nottingham"
+        >
+        <h3>University of Nottingham</h3>
+      </div>
+
+      <!-- DUPLICATES -->
+      <div class="partner-card">
+        <img
+          src="assets/university curtin.webp"
+          alt="Curtin University"
+        >
+        <h3>Curtin University</h3>
+      </div>
+
+      <div class="partner-card">
+        <img
+          src="assets/university deakin.webp"
+          alt="Deakin University"
+        >
+        <h3>Deakin University</h3>
+      </div>
+
+      <div class="partner-card">
+        <img
+          src="assets/university of birmingham.webp"
+          alt="University of Birmingham"
+        >
+        <h3>University of Birmingham</h3>
+      </div>
+
+      <div class="partner-card">
+        <img
+          src="assets/university of london royal holloway.webp"
+          alt="Royal Holloway"
+        >
+        <h3>Royal Holloway</h3>
+      </div>
+
+      <div class="partner-card">
+        <img
+          src="assets/university of nottingham.webp"
+          alt="University of Nottingham"
+        >
+        <h3>University of Nottingham</h3>
+      </div>
+
+      <!-- CARD -->
+      <div class="partner-card">
+        <img
+          src="assets/university curtin.webp"
+          alt="Curtin University"
+        >
+        <h3>Curtin University</h3>
+      </div>
+
+      <!-- CARD -->
+      <div class="partner-card">
+        <img
+          src="assets/university deakin.webp"
+          alt="Deakin University"
+        >
+        <h3>Deakin University</h3>
+      </div>
+
+      <!-- CARD -->
+      <div class="partner-card">
+        <img
+          src="assets/university of birmingham.webp"
+          alt="University of Birmingham"
+        >
+        <h3>University of Birmingham</h3>
+      </div>
+
+      <!-- CARD -->
+      <div class="partner-card">
+        <img
+          src="assets/university of london royal holloway.webp"
+          alt="Royal Holloway"
+        >
+        <h3>Royal Holloway</h3>
+      </div>
+
+      <!-- CARD -->
+      <div class="partner-card">
+        <img
+          src="assets/university of nottingham.webp"
+          alt="University of Nottingham"
+        >
+        <h3>University of Nottingham</h3>
+      </div>
+
+    </div>
+
+  </div>
+
 
 </section>
 
@@ -635,128 +796,7 @@
 <!-- =========================
      FOOTER
 ========================= -->
-
-<footer class="footer">
-
-  <div class="container">
-
-    <!-- TOP -->
-    <div class="footer-top">
-
-      <!-- BRAND -->
-      <div class="footer-brand">
-
-        <div class="footer-logo">
-
-          <img
-            src="assets/Nice Fly Consultants logo.png"
-            alt="Nice Fly Consultants"
-          >
-
-        </div>
-
-        <p>
-          Nice Fly Consultants helps students achieve
-          their dreams of international education through
-          trusted guidance, admissions support, and visa
-          consultancy services.
-        </p>
-
-        <!-- SOCIAL -->
-        <div class="footer-socials">
-
-          <a
-            href="https://wa.me/923004117716"
-            target="_blank"
-          >
-            <i class="fa-brands fa-whatsapp"></i>
-          </a>
-
-          <a
-            href="mailto:niceflyconsultants@gmail.com"
-          >
-            <i class="fa-solid fa-envelope"></i>
-          </a>
-
-          <a href="#">
-            <i class="fa-brands fa-linkedin-in"></i>
-          </a>
-
-        </div>
-
-      </div>
-
-      <!-- LINKS -->
-      <div class="footer-links">
-
-        <h3>Quick Links</h3>
-
-        <a href="#home">Home</a>
-        <a href="#destinations">Destinations</a>
-        <a href="#services">Services</a>
-        <a href="#contact">Contact</a>
-
-      </div>
-
-      <!-- COUNTRIES -->
-      <div class="footer-links">
-
-        <h3>Study Destinations</h3>
-
-        <a href="#">Study in UK</a>
-        <a href="#">Study in USA</a>
-        <a href="#">Study in Canada</a>
-        <a href="#">Study in Australia</a>
-
-      </div>
-
-      <!-- CONTACT -->
-      <div class="footer-links">
-
-        <h3>Contact Info</h3>
-
-        <p>042-35384101</p>
-
-        <p>
-          niceflyconsultants@gmail.com
-        </p>
-
-        <p>
-          40 KM Multan Road
-          Manga Mandi Lahore
-        </p>
-
-      </div>
-
-    </div>
-
-    <!-- BOTTOM -->
-    <div class="footer-bottom">
-
-      <p>
-        © 2025 Nice Fly Consultants.
-        All Rights Reserved.
-      </p>
-
-      <div class="developer-credit">
-
-        <span>
-          Designed By
-        </span>
-
-        <a
-          href="https://webflowbykhalid.com/"
-          target="_blank"
-          rel="noopener noreferrer"
-        >Khalid Karim</a>
-
-      </div>
-
-    </div>
-
-  </div>
-
-</footer>
+<div id="footer"></div>
 
   <!-- footer section-->
   <script src="main.js"></script>
